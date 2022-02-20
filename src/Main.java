@@ -1,45 +1,41 @@
-import my.favorite.code.Utils;
+import java.util.Arrays;
 
-class Main {
+public class Main {
 
     public static void main(String[] args) {
+        System.out.println("Start game!");
+        int[] speedOfPlayers = {3, 0, 0, 4, 1};
+
+        int expected = 3;
+        int actual = Statistic.speedPlOut(speedOfPlayers);
+        System.out.println("1.Количество выбывающих " + "ОР: " + expected + "; ФР: " + actual);
+
+        int[] expected2 = {3, 4, 1};
+        int[] actual2 = Statistic.massOutPlayers(speedOfPlayers);
+
+        System.out.println("2.Массив скоростей выбывших игроков " + "ОР: " + expected2 + ";" + " ФР: " + actual2 + ";");
 
 
-        int speedOfPlayer1 = 1;
-        int speedOfPlayer2 = 0;
-        int speedOfPlayer3 = 2;
-        int outPlayers = 0;
+        int[] expected3 = {0, 0};
+        int[] actual3 = Statistic.massStayPlayers(speedOfPlayers);
 
-        boolean isReedLight;
-        if (isReedLight = false) {
-            if (speedOfPlayer1 >= 1) {
-                outPlayers = outPlayers + 1;
-                Utils.printDelim1("Статус игрока");
-            }
-            if (speedOfPlayer2 >= 1) {
-                outPlayers = outPlayers + 1;
-                Utils.printDelim2("Статус игрока");
-            }
-            if (speedOfPlayer3 >= 1) {
-                outPlayers = outPlayers + 1;
-                Utils.printDelim3("Статус игрока");
-            }
-
-            System.out.println("Выбыло: " + outPlayers);
-
-        } else {
-            System.out.println("Все в Игре! ");
-        }
-
+        System.out.println("3.Массив скоростей оставшихся в игре игроков " + "ОР: " + expected3 + ";" + " ФР: " + actual3 + ";");
     }
+
+
 
 
 }
 
 
-// Допишите здесь логику так, что будет подсчитано и выведено
-// количество игроков, которые выбывают.
-// Если свет зелёный, то проходят все игроки (0 выбывают).
-// Если свет красный, то выбывает каждый, чья скорость не 0.
+
+
+
+
+
+
+
+
+
 
 
