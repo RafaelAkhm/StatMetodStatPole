@@ -1,18 +1,16 @@
-package my.favorite.code;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
-public class Utils {
-    public static boolean isReedLightLight;
+public class statTest {
 
-    public static void printDelim1(String title) {
-        System.out.println("Игрок 1 - выбыл ");
-    }
+    @Test
 
-    public static void printDelim2(String title) {
-        System.out.println("Игрок 2 - выбыл ");
-    }
+    public void NumbersOutPlayers() {
+        String[] namesAndSpeed = {"Kostya_0", "Rafael_8", "Sasha_6", "Misha_3"};
 
-    public static void printDelim3(String title) {
-        System.out.println("Игрок 3 - выбыл ");
+        String expected = "Rafael";
+        int actual = Main.getSurvivorsPlayers(names);
+        Assertions.assertEquals(expected, actual);
     }
 }
 
