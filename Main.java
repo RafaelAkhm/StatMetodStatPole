@@ -1,46 +1,30 @@
-import my.favorite.code.Utils;
 
 public class Main {
-    public static boolean isReedLight =false;
-
-    public static void main(String[] args){
-
-
-    int speedOfPlayer1 = 1;
-    int speedOfPlayer2 = 0;
-    int speedOfPlayer3 = 2;
-    int outPlayers = 0;
+    public static void main(String[] args) {
+        String[] namesAndSpeed = {"Kostya_0", "Rafael_8", "Sasha_6", "Misha_3"};
+        String[] survivorsNames = getSurvivorsPlayers(namesAndSpeed);
 
 
-        if(isReedLight =false)
-
-    {
-        if (speedOfPlayer1 >= 1) {
-            outPlayers = outPlayers + 1;
-            Utils.printDelim1("Статус игрока");
-        }
-        if (speedOfPlayer2 >= 1) {
-            outPlayers = outPlayers + 1;
-            Utils.printDelim2("Статус игрока");
-        }
-        if (speedOfPlayer3 >= 1) {
-            outPlayers = outPlayers + 1;
-            Utils.printDelim3("Статус игрока");
+        for (String name : survivorsNames) {
+            System.out.println(name);
         }
 
-        System.out.println("Выбыло: " + outPlayers);
-
-    } else
-
-    {
-        System.out.println("Все в Игре! ");
     }
 
+    public static String[] getSurvivorsPlayers(String[] array) {
+        int nominalSpeed = 5;
+        String[] names = new String[array.length];
+
+        for(int i = 0; i < array.length; i++) {
+            String[] elements = array[i].split("_"); // elements = ["Kostya", "500"]
+            int speed = Integer.parseInt(elements[1]); // берем скорость каждого человека и превращаем в число
+            if (speed >= nominalSpeed) { // сравниваем скорость каждого человека с номинальной
+                names[i] = elements[0]; //добавляем в массив имя того кто выжил
+            }
+        }
+        return names;
+    }
 }
-
-
-}
-
 
 
 
